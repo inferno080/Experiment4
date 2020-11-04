@@ -32,7 +32,7 @@ function f1()
             }), (700))
             while(V2<120)
             {
-                setTimeout((function (){
+                setInterval((function (){
                     V2+= parseInt(getQueryStringValue("inc"));
                     //calculate pH here; I have termporarily simply incremented
                      pH = pH +1;
