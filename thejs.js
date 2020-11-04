@@ -91,10 +91,15 @@ function updatevalueondisplay()
     if(V2>=((6*max_base)/6))
     {
         document.getElementById("water5").style.display = "none";
+        f2();
     }
     if(V2<max_base)
     {
             document.getElementById("Pisplay1").innerHTML = pH ;
+            Plotly.plot('chart',[{
+                y:[pH],
+                type:'line'
+            }]);
             final = pH
     }
     else
@@ -105,3 +110,26 @@ function updatevalueondisplay()
         pH = final;
     } 
 }
+
+//  chart
+
+/*function getData() {
+    return pH;
+}  
+Plotly.plot('chart',[{
+    y:[getData()],
+    type:'line'
+}]); */
+
+var cnt = 0;
+setInterval(function(){
+    Plotly.extendTraces('chart',{ y:[[getData()]]}, [0]);
+    cnt++;
+    if(cnt > 500) {
+        Plotly.relayout('chart',{
+            xaxis: {
+                range: [cnt-500,cnt]
+            }
+        });
+    }
+},15); 
