@@ -58,7 +58,7 @@ function f2()
 
 function updatevalueondisplay()
 {
-    V2+= parseInt(getQueryStringValue("inc"));
+   /* V2+= parseInt(getQueryStringValue("inc"));
     //calculate pH here; I have termporarily simply incremented
     pH = pH +1;
     //the changed pH is displayed
@@ -71,5 +71,6 @@ function updatevalueondisplay()
             V2--;
             //temp
             pH--;
-    }
+    }*/
+    console.log("Yes?")
 }
