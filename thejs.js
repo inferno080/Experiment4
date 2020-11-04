@@ -19,6 +19,16 @@ function f1()
     {   
         document.getElementById("knob_ON").style.display = "none";
         document.getElementById("fun1").style.display = "none";
+            setInterval((function (){
+                document.getElementById("ripple_o").style.display = "block";
+                document.getElementById("ripple_m").style.display = "block";
+                document.getElementById("ripple_i").style.display = "block"; 
+                setTimeout((function (){
+                    document.getElementById("ripple_o").style.display = "none";
+                    document.getElementById("ripple_m").style.display = "none";
+                    document.getElementById("ripple_i").style.display = "none";
+                }), (500))
+            }), (700))
     }
     else if (c==3)
     {
