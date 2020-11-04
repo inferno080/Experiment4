@@ -32,12 +32,12 @@ function f1()
             }), (700))
             while(V2<120)
             {
-                V2+= parseInt(getQueryStringValue("inc"));
-                //calculate pH here; I have termporarily simply incremented
-                 pH = pH +1;
-
-                 //the changed pH is displayed
                 setTimeout((function (){
+                    V2+= parseInt(getQueryStringValue("inc"));
+                    //calculate pH here; I have termporarily simply incremented
+                     pH = pH +1;
+    
+                     //the changed pH is displayed
                     document.getElementById("Pisplay1").innerHTML = pH ; 
                 }), (700))
             }
