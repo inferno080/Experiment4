@@ -68,27 +68,27 @@ function updatevalueondisplay()
     pH = pH +1;
 
     //the changed pH is displayed
-    if(V2<((1*max_base)/6))
+    if(V2>((1*max_base)/6))
     {
         document.getElementById("water0").style.display = "none";
     }
-    if((V2<((2*max_base)/6)))
+    if((V2>((2*max_base)/6)))
     {
         document.getElementById("water1").style.display = "none";
     }
-    if(V2<((3*max_base)/6))
+    if(V2>((3*max_base)/6))
     {
         document.getElementById("water2").style.display = "none";
     }
-    if(V2<((4*max_base)/6))
+    if(V2>((4*max_base)/6))
     {
         document.getElementById("water3").style.display = "none";
     }
-    if(V2<((5*max_base)/6))
+    if(V2>((5*max_base)/6))
     {
         document.getElementById("water3").style.display = "none";
     }
-    if(V2<((6*max_base)/6))
+    if(V2>=((6*max_base)/6))
     {
         document.getElementById("water3").style.display = "none";
     }
