@@ -1,4 +1,4 @@
-c = 0;
+var c = 0;
 experimentdone = false;
 //?v1=1&n1=1&n2=1&inc=1
 function getQueryStringValue (key) 
@@ -7,10 +7,11 @@ function getQueryStringValue (key)
 }  
 
 increment_by_value =  getQueryStringValue("inc") ;
-V1 =  getQueryStringValue("v1") ;
-V2 =0;
-N1 =  getQueryStringValue("n1") ;
-N2 =  getQueryStringValue("n2") ;
+var V1 =  getQueryStringValue("v1") ;
+var V2 =0;
+var N1 =  getQueryStringValue("n1") ;
+var N2 =  getQueryStringValue("n2") ;
+var pH = 0;
 
 function f1()
 {
@@ -29,6 +30,14 @@ function f1()
                     document.getElementById("ripple_i").style.display = "none";
                 }), (500))
             }), (700))
+            while(V2<120)
+            {
+                V2+= parseInt(getQueryStringValue("inc"));
+                //calculate pH here; I have termporarily simply incremented
+                 pH = pH +1;
+                document.getElementById("Pisplay1").innerHTML = pH ; 
+            }
+
     }
     else if (c==3)
     {
@@ -44,7 +53,7 @@ function f1()
 }
 
 function f2()
-{
+{   
     if(experimentdone)
     {
         document.getElementById("fun2").style.display = "none";
