@@ -5,12 +5,10 @@ function getQueryStringValue (key)
 {  
     return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
 }  
-
-increment_by_value =  getQueryStringValue("inc") ;
-var V1 =  getQueryStringValue("v1") ;
+var V1 =  parseInt(getQueryStringValue("v1")) ;
 var V2 =0;
-var N1 =  getQueryStringValue("n1") ;
-var N2 =  getQueryStringValue("n2") ;
+var N1 =  parseInt(getQueryStringValue("n1")) ;
+var N2 = parseInt(getQueryStringValue("n2"));
 var pH = 0;
 
 function f1()
@@ -50,10 +48,9 @@ function f1()
 
 function f2()
 {   
-    if(experimentdone)
-    {
         document.getElementById("fun2").style.display = "none";
-    }
+        document.getElementById("drop").style.display = "none";
+    
 }
 
 function updatevalueondisplay()
@@ -70,7 +67,9 @@ function updatevalueondisplay()
             final = pH
     }
     else
-    {
+    {   
+        
+        f2();
         V2--;
         pH = final;
     } 
