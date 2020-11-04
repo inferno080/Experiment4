@@ -16,8 +16,8 @@ function f1()
     c++;
     if(c==1)
     {   
+        document.getElementById("Kitto").style.display = "none";
         document.getElementById("knob_ON").style.display = "none";
-        document.getElementById("fun1").style.display = "none";
             setInterval((function ()
             {
                 document.getElementById("ripple_o").style.display = "block";
