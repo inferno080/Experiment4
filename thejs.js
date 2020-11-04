@@ -86,11 +86,11 @@ function updatevalueondisplay()
     }
     if(V2>((5*max_base)/6))
     {
-        document.getElementById("water3").style.display = "none";
+        document.getElementById("water4").style.display = "none";
     }
     if(V2>=((6*max_base)/6))
     {
-        document.getElementById("water3").style.display = "none";
+        document.getElementById("water5").style.display = "none";
     }
     if(V2<max_base)
     {
