@@ -100,9 +100,8 @@ function updatevalueondisplay()
                 y:[pH],
                 type:'line'
             }]);
-            setInterval(function(){
-                Plotly.extendTraces('chart',{ y:[[pH]]}, [0]);
-            },700); 
+            Plotly.extendTraces('chart',{ y:[[pH]]}, [0]);
+        
             final = pH
     }
     else
