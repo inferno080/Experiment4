@@ -20,15 +20,11 @@ function f1()
     {   
         document.getElementById("knob_ON").style.display = "none";
         document.getElementById("fun1").style.display = "none";
-            setInterval((function (){
+            setInterval((function ()
+            {
                 document.getElementById("ripple_o").style.display = "block";
                 document.getElementById("ripple_m").style.display = "block";
                 document.getElementById("ripple_i").style.display = "block"; 
-                setTimeout((function (){
-                    document.getElementById("ripple_o").style.display = "none";
-                    document.getElementById("ripple_m").style.display = "none";
-                    document.getElementById("ripple_i").style.display = "none";
-                }), (500))
                 V2+= parseInt(getQueryStringValue("inc"));
                 //calculate pH here; I have termporarily simply incremented
                 pH = pH +1;
@@ -43,6 +39,11 @@ function f1()
                         //temp
                         pH--;
                 }
+                setTimeout((function (){
+                    document.getElementById("ripple_o").style.display = "none";
+                    document.getElementById("ripple_m").style.display = "none";
+                    document.getElementById("ripple_i").style.display = "none";
+                }), (500))
             }), (700))
 
     }
