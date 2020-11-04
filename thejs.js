@@ -25,26 +25,14 @@ function f1()
                 document.getElementById("ripple_o").style.display = "block";
                 document.getElementById("ripple_m").style.display = "block";
                 document.getElementById("ripple_i").style.display = "block"; 
-                V2+= parseInt(getQueryStringValue("inc"));
-                //calculate pH here; I have termporarily simply incremented
-                pH = pH +1;
-                //the changed pH is displayed
-                if(V2<120)
-                {
-                        document.getElementById("Pisplay1").innerHTML = pH ;
-                }
-                else
-                {
-                        V2--;
-                        //temp
-                        pH--;
-                }
                 setTimeout((function (){
                     document.getElementById("ripple_o").style.display = "none";
                     document.getElementById("ripple_m").style.display = "none";
                     document.getElementById("ripple_i").style.display = "none";
                 }), (500))
+                updatevalueondisplay();
             }), (700))
+
 
     }
     else if (c==3)
@@ -65,5 +53,23 @@ function f2()
     if(experimentdone)
     {
         document.getElementById("fun2").style.display = "none";
+    }
+}
+
+function updatevalueondisplay()
+{
+    V2+= parseInt(getQueryStringValue("inc"));
+    //calculate pH here; I have termporarily simply incremented
+    pH = pH +1;
+    //the changed pH is displayed
+    if(V2<120)
+    {
+            document.getElementById("Pisplay1").innerHTML = pH ;
+    }
+    else
+    {
+            V2--;
+            //temp
+            pH--;
     }
 }
