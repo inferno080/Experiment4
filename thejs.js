@@ -98,7 +98,7 @@ function updatevalueondisplay()
             document.getElementById("Pisplay1").innerHTML = pH ;
             Plotly.plot('chart',[{
                 y:[pH],
-                type:'line'
+                type:'lines+markers'
             }]);
             Plotly.extendTraces('chart',{ y:[[pH]]}, [0]);
         
