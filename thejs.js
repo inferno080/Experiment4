@@ -29,18 +29,21 @@ function f1()
                     document.getElementById("ripple_m").style.display = "none";
                     document.getElementById("ripple_i").style.display = "none";
                 }), (500))
+                V2+= parseInt(getQueryStringValue("inc"));
+                //calculate pH here; I have termporarily simply incremented
+                pH = pH +1;
+                //the changed pH is displayed
+                if(V2<120)
+                {
+                        document.getElementById("Pisplay1").innerHTML = pH ;
+                }
+                else
+                {
+                        V2--;
+                        //temp
+                        pH--;
+                }
             }), (700))
-            while(V2<120)
-            {
-                setInterval((function (){
-                    V2+= parseInt(getQueryStringValue("inc"));
-                    //calculate pH here; I have termporarily simply incremented
-                     pH = pH +1;
-    
-                     //the changed pH is displayed
-                    document.getElementById("Pisplay1").innerHTML = pH ; 
-                }), (700))
-            }
 
     }
     else if (c==3)
