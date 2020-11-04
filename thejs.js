@@ -11,6 +11,9 @@ var N1 =  parseInt(getQueryStringValue("n1")) ;
 var N2 = parseInt(getQueryStringValue("n2"));
 var pH = 0;
 
+//hardcoded a value here. It can be changed
+var max_base = 120;
+
 function f1()
 {
     c++;
@@ -33,11 +36,17 @@ function f1()
 
 
     }
-    else if (c==3)
+    else if (c==2)
     {
         document.getElementById("knob_ON").style.display = "block";
         document.getElementById("fun3").style.display = "none";
-        document.getElementById("drop").style.display = "block";
+        document.getElementById("drop").style.display = "none";
+        var insid = document.getElementById("ripple_i");
+        var mid = document.getElementById("ripple_m");
+        var out = document.getElementById("ripple_o");
+        insid.remove();
+        mid.remove();
+        out.remove();
     }
     else
     {
@@ -49,8 +58,6 @@ function f1()
 function f2()
 {   
         document.getElementById("fun2").style.display = "none";
-        document.getElementById("drop").style.display = "none";
-    
 }
 
 function updatevalueondisplay()
@@ -61,7 +68,31 @@ function updatevalueondisplay()
     pH = pH +1;
 
     //the changed pH is displayed
-    if(V2<120)
+    if(V2<((1*max_base)/6))
+    {
+        document.getElementById("water0").style.display = "none";
+    }
+    if((V2<((2*max_base)/6)))
+    {
+        document.getElementById("water1").style.display = "none";
+    }
+    if(V2<((3*max_base)/6))
+    {
+        document.getElementById("water2").style.display = "none";
+    }
+    if(V2<((4*max_base)/6))
+    {
+        document.getElementById("water3").style.display = "none";
+    }
+    if(V2<((5*max_base)/6))
+    {
+        document.getElementById("water3").style.display = "none";
+    }
+    if(V2<((6*max_base)/6))
+    {
+        document.getElementById("water3").style.display = "none";
+    }
+    if(V2<max_base)
     {
             document.getElementById("Pisplay1").innerHTML = pH ;
             final = pH
