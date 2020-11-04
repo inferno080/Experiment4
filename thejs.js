@@ -35,7 +35,11 @@ function f1()
                 V2+= parseInt(getQueryStringValue("inc"));
                 //calculate pH here; I have termporarily simply incremented
                  pH = pH +1;
-                document.getElementById("Pisplay1").innerHTML = pH ; 
+
+                 //the changed pH is displayed
+                setTimeout((function (){
+                    document.getElementById("Pisplay1").innerHTML = pH ; 
+                }), (700))
             }
 
     }
