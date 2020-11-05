@@ -1,6 +1,20 @@
 var c = 0;
-experimentdone = false;
+//experimentdone = false;
 //?v1=1&n1=1&n2=1&inc=1
+
+window.onload = function () {
+
+    var dps = []; // dataPoints
+    var chart = new CanvasJS.Chart("chartContainer", {
+        title :{
+            text: "pH vs Volume of Base"
+        },
+        data: [{
+            type: "line",
+            dataPoints: dps
+        }]
+    });
+    
 function getQueryStringValue (key) 
 {  
     return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
@@ -114,19 +128,6 @@ function updatevalueondisplay()
 
 //code for chart
 
-
-window.onload = function () {
-
-    var dps = []; // dataPoints
-    var chart = new CanvasJS.Chart("chartContainer", {
-        title :{
-            text: "pH vs Volume of Base"
-        },
-        data: [{
-            type: "line",
-            dataPoints: dps
-        }]
-    });
     //var updateInterval = 700;
     //var dataLength = 20; // number of dataPoints visible at any point
     
