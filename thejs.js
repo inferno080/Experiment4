@@ -120,7 +120,7 @@ function updatevalueondisplay()
     });
     
     var xVal = 0;
-    var yVal = 100; 
+    var yVal = 0; 
     var updateInterval = 700;
     var dataLength = max_base; // number of dataPoints visible at any point
     
