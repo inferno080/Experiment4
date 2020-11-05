@@ -99,6 +99,8 @@ function updatevalueondisplay()
     {
         document.getElementById("Pisplay1").innerHTML = pH ;
         final = pH;
+        updateChart(dataLength);
+        setInterval(function(){updateChart()}, updateInterval);
     }
     else
     {   
@@ -122,33 +124,30 @@ window.onload = function () {
             dataPoints: dps
         }]
     });
-    
-    var xVal = 0;
-    var yVal = 100; 
-    var updateInterval = 1000;
-    var dataLength = 20; // number of dataPoints visible at any point
+
+    var yVal =0;
+    var xVal =0;
+    var updateInterval = 700;
+    var dataLength = max_base; // number of dataPoints visible at any point
     
     var updateChart = function (count) {
     
         count = count || 1;
     
         for (var j = 0; j < count; j++) {
-            yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+            yVal = pH
             dps.push({
                 x: xVal,
                 y: yVal
             });
-            xVal++;
+            xVal = V2;
         }
     
-        if (dps.length > dataLength) {
+        /*if (dps.length > dataLength) {
             dps.shift();
-        }
+        }*/
     
         chart.render();
     };
-    
-    updateChart(dataLength);
-    setInterval(function(){updateChart()}, updateInterval);
     
     }
