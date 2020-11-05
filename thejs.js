@@ -7,11 +7,11 @@ window.onload = function () {
     var dps = []; // dataPoints
     var chart = new CanvasJS.Chart("chartContainer", {
         title :{
-            text: "pH vs Volume of Base"
+            text: "pH vs Volume of Base",
         },
         data: [{
             type: "line",
-            dataPoints: dps
+            dataPoints: dps,
         }]
     });
 
