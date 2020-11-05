@@ -96,11 +96,11 @@ function updatevalueondisplay()
         f2();
     }
     if(V2<=max_base)
-    {
-        document.getElementById("Pisplay1").innerHTML = pH ;
-        final = pH;
+    {   
         updateChart(dataLength);
         setInterval(function(){updateChart()}, updateInterval);
+        document.getElementById("Pisplay1").innerHTML = pH ;
+        final = pH;
     }
     else
     {   
