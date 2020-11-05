@@ -14,7 +14,7 @@ window.onload = function () {
             dataPoints: dps
         }]
     });
-    
+
 function getQueryStringValue (key) 
 {  
     return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
@@ -108,7 +108,7 @@ function updatevalueondisplay()
         document.getElementById("water5").style.display = "none";
         f2();
     }
-    if(V2<max_base)
+    if(V2<=max_base)
     {
         document.getElementById("Pisplay1").innerHTML = pH ;
         final = pH;
