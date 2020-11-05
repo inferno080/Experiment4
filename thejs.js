@@ -1,19 +1,6 @@
 var c = 0;
-//experimentdone = false;
+experimentdone = false;
 //?v1=1&n1=1&n2=1&inc=1
-
-window.onload = function () {
-
-    var dps = []; // dataPoints
-    var chart = new CanvasJS.Chart("chartContainer", {
-        title :{
-            text: "pH vs Volume of Base",
-        },
-        data: [{
-            type: "line",
-            dataPoints: dps,
-        }]
-    });
 
 function getQueryStringValue (key) 
 {  
@@ -112,11 +99,6 @@ function updatevalueondisplay()
     {
         document.getElementById("Pisplay1").innerHTML = pH ;
         final = pH;
-        dps.push({
-            x: V2,
-            y: pH,
-        });
-        chart.render();
     }
     else
     {   
@@ -128,23 +110,45 @@ function updatevalueondisplay()
 
 //code for chart
 
-    //var updateInterval = 700;
-    //var dataLength = 20; // number of dataPoints visible at any point
+window.onload = function () {
+
+    var dps = []; // dataPoints
+    var chart = new CanvasJS.Chart("chartContainer", {
+        title :{
+            text: "Dynamic Data"
+        },
+        data: [{
+            type: "line",
+            dataPoints: dps
+        }]
+    });
     
-   /* var updateChart = function (count) {
+    var xVal = 0;
+    var yVal = 100; 
+    var updateInterval = 1000;
+    var dataLength = 20; // number of dataPoints visible at any point
+    
+    var updateChart = function (count) {
     
         count = count || 1;
     
         for (var j = 0; j < count; j++) {
             yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
-
+            dps.push({
+                x: xVal,
+                y: yVal
+            });
             xVal++;
         }
     
-     /*   if (dps.length > dataLength) {
+        if (dps.length > dataLength) {
             dps.shift();
-        }*/
+        }
+    
+        chart.render();
     };
     
-    //updateChart(dataLength);
-    //setInterval(function(){updateChart()}, updateInterval);
+    updateChart(dataLength);
+    setInterval(function(){updateChart()}, updateInterval);
+    
+    }
