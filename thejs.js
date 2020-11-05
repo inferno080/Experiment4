@@ -1,5 +1,5 @@
 var c = 0;
-experimentdone = false;
+var experimentstarted = false;
 //?v1=1&n1=1&n2=1&inc=1
 
 function getQueryStringValue (key) 
@@ -23,6 +23,7 @@ function f1()
         document.getElementById("fun1").style.display = "none";
         document.getElementById("knob_ON").style.display = "none";
         document.getElementById("drop").style.display = "block";
+        experimentstarted = true;
             setInterval((function ()
             {
                 document.getElementById("ripple_o").style.display = "block";
@@ -90,22 +91,19 @@ function updatevalueondisplay()
     {
         document.getElementById("water4").style.display = "none";
     }
-    if(V2>=((6*max_base)/6))
+    if(V2>((5.9*max_base)/6))
     {
         document.getElementById("water5").style.display = "none";
         f2();
     }
     if(V2<=max_base)
     {   
-        updateChart(dataLength);
-        setInterval(function(){updateChart()}, updateInterval);
         document.getElementById("Pisplay1").innerHTML = pH ;
-        final = pH;
+        final = pH;    
     }
     else
     {   
-        f2();
-        V2--;
+        experimentstarted = false;
         pH = final;
     } 
 }
@@ -142,7 +140,11 @@ window.onload = function () {
             });
             xVal = V2;
         }
-    
+        if(experimentstarted == true)
+        {
+            updateChart(dataLength);
+            setInterval(function(){updateChart()}, updateInterval);
+        }
         /*if (dps.length > dataLength) {
             dps.shift();
         }*/
