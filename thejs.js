@@ -102,6 +102,7 @@ function updatevalueondisplay()
             x: V2,
             y: pH,
         });
+        chart.render();
     }
     else
     {   
@@ -142,8 +143,6 @@ window.onload = function () {
      /*   if (dps.length > dataLength) {
             dps.shift();
         }*/
-    
-        chart.render();
     };
     
     //updateChart(dataLength);
