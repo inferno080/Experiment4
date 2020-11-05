@@ -131,7 +131,7 @@ function updatevalueondisplay()
         for (var j = 0; j < max_base; j++) {
             yVal = pH;
             xVal = V2;
-            if(V2<max_base)
+            if(V2<=max_base)
             {
                 dps.push({
                     x: xVal,
