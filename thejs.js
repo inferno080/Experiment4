@@ -118,7 +118,7 @@ function updatevalueondisplay()
             dataPoints: dps
         }]
     });
-    
+    //var op= 0;
     var xVal = 0;
     var yVal = 0; 
     var updateInterval = 700;
@@ -128,13 +128,16 @@ function updatevalueondisplay()
     
         count = count || 1;
     
-        for (var j = 0; j < count; j++) {
+        for (var j = 0; j < max_base; j++) {
             yVal = pH;
+            if(V2<max_base)
+            {
+                dps.push({
+                    x: xVal,
+                    y: yVal
+                });
+            }
             xVal = V2;
-            dps.push({
-                x: xVal,
-                y: yVal
-            });
         }
     
         if (dps.length > dataLength) {
