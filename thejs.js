@@ -143,8 +143,10 @@ window.onload = function () {
     
         chart.render();
     };
-    
-    updateChart(dataLength);
-    setInterval(function(){updateChart()}, updateInterval);
+    if(experimentstarted)
+    {
+        updateChart(dataLength);
+        setInterval(function(){updateChart()}, updateInterval);
+    }
     
     }
