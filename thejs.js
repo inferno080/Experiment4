@@ -21,6 +21,7 @@ function f1()
     {   
         document.getElementById("fun1").style.display = "none";
         document.getElementById("knob_ON").style.display = "none";
+        document.getElementById("drop").style.display = "block";
             setInterval((function ()
             {
                 document.getElementById("ripple_o").style.display = "block";
@@ -95,30 +96,55 @@ function updatevalueondisplay()
     }
     if(V2<max_base)
     {
-            document.getElementById("Pisplay1").innerHTML = pH ;
-            Plotly.plot('chart',[{
-                y:[pH],
-                type:'lines+markers'
-            }]);
-            Plotly.extendTraces('chart',{ y:[[pH]]}, [0]);
-        
-            final = pH
+        document.getElementById("Pisplay1").innerHTML = pH ;
+        final = pH;
+        dps.push({
+            x: V2,
+            y: pH,
+        });
     }
     else
     {   
-        
         f2();
         V2--;
         pH = final;
     } 
 }
 
-//  chart
+//code for chart
 
-/*function getData() {
-    return pH;
-}  
-Plotly.plot('chart',[{
-    y:[getData()],
-    type:'line'
-}]); */
+
+window.onload = function () {
+
+    var dps = []; // dataPoints
+    var chart = new CanvasJS.Chart("chartContainer", {
+        title :{
+            text: "pH vs Volume of Base"
+        },
+        data: [{
+            type: "line",
+            dataPoints: dps
+        }]
+    });
+    //var updateInterval = 700;
+    //var dataLength = 20; // number of dataPoints visible at any point
+    
+   /* var updateChart = function (count) {
+    
+        count = count || 1;
+    
+        for (var j = 0; j < count; j++) {
+            yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+
+            xVal++;
+        }
+    
+     /*   if (dps.length > dataLength) {
+            dps.shift();
+        }*/
+    
+        chart.render();
+    };
+    
+    //updateChart(dataLength);
+    //setInterval(function(){updateChart()}, updateInterval);
