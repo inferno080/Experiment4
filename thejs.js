@@ -140,12 +140,10 @@ window.onload = function () {
         if (dps.length > dataLength) {
             dps.shift();
         }
-    
-        
+        chart.render();
     };
     if(experimentstarted)
     {   
-        chart.render();
         updateChart(dataLength);
         setInterval(function(){updateChart()}, updateInterval);
     }
