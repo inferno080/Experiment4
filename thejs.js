@@ -13,7 +13,7 @@ var N2 = parseInt(getQueryStringValue("n2"));
 var pH = 0;
 
 //hardcoded a value here. It can be changed
-var max_base = 120;
+var max_base = 40;
 
 function f1()
 {
@@ -141,10 +141,11 @@ window.onload = function () {
             dps.shift();
         }
     
-        chart.render();
+        
     };
     if(experimentstarted)
-    {
+    {   
+        chart.render();
         updateChart(dataLength);
         setInterval(function(){updateChart()}, updateInterval);
     }
