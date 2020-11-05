@@ -91,11 +91,6 @@ function updatevalueondisplay()
     {
         document.getElementById("water4").style.display = "none";
     }
-    if(V2>((5.9*max_base)/6))
-    {
-        document.getElementById("water5").style.display = "none";
-        f2();
-    }
     if(V2<=max_base)
     {   
         document.getElementById("Pisplay1").innerHTML = pH ;
@@ -105,6 +100,7 @@ function updatevalueondisplay()
     {   
         experimentstarted = false;
         pH = final;
+        f2();
     } 
 }
 
@@ -127,7 +123,8 @@ window.onload = function () {
     var xVal =0;
     var updateInterval = 700;
     var dataLength = max_base; // number of dataPoints visible at any point
-    
+        
+    chart.render();
     var updateChart = function (count) {
     
         count = count || 1;
@@ -140,16 +137,11 @@ window.onload = function () {
             });
             xVal = V2;
         }
-        if(experimentstarted == true)
-        {
-            updateChart(dataLength);
-            setInterval(function(){updateChart()}, updateInterval);
-        }
+        updateChart(dataLength);
+        setInterval(function(){updateChart()}, updateInterval);
         /*if (dps.length > dataLength) {
             dps.shift();
         }*/
-    
-        chart.render();
     };
     
     }
