@@ -19,7 +19,7 @@ function f1()
 {
     c++;
     if(c==1)
-    {   
+    {   g();
         document.getElementById("fun1").style.display = "none";
         document.getElementById("knob_ON").style.display = "none";
         document.getElementById("drop").style.display = "block";
@@ -106,12 +106,12 @@ function updatevalueondisplay()
 
 //code for chart
 
-window.onload = function () {
+    function g() {
 
     var dps = []; // dataPoints
     var chart = new CanvasJS.Chart("chartContainer", {
         title :{
-            text: "Dynamic Data"
+            text: "pH vs Volume of Base added"
         },
         data: [{
             type: "line",
@@ -121,20 +121,20 @@ window.onload = function () {
     
     var xVal = 0;
     var yVal = 100; 
-    var updateInterval = 1000;
-    var dataLength = 20; // number of dataPoints visible at any point
+    var updateInterval = 700;
+    var dataLength = max_base; // number of dataPoints visible at any point
     
     var updateChart = function (count) {
     
         count = count || 1;
     
         for (var j = 0; j < count; j++) {
-            yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+            yVal = pH;
+            xVal = V2;
             dps.push({
                 x: xVal,
                 y: yVal
             });
-            xVal++;
         }
     
         if (dps.length > dataLength) {
@@ -144,5 +144,4 @@ window.onload = function () {
     };
         updateChart(dataLength);
         setInterval(function(){updateChart()}, updateInterval);
-    
     }
