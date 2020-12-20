@@ -21,8 +21,11 @@ function f1()
     if(c==1)
     {   g();
         document.getElementById("fun1").style.display = "none";
+        document.getElementById("fun1").style.cursor = "pointer";
         document.getElementById("knob_ON").style.display = "none";
+        document.getElementById("knob_ON").style.cursor = "pointer";
         document.getElementById("drop").style.display = "block";
+        document.getElementById("drop").style.cursor = "pointer";
         experimentstarted = true;
             setInterval((function ()
             {
@@ -42,7 +45,9 @@ function f1()
     else if (c==2)
     {
         document.getElementById("knob_ON").style.display = "block";
+        document.getElementById("knob_ON").style.cursor = "pointer";
         document.getElementById("fun3").style.display = "none";
+        document.getElementById("fun3").style.cursor = "pointer";
         document.getElementById("drop").style.display = "none";
         var insid = document.getElementById("ripple_i");
         var mid = document.getElementById("ripple_m");
